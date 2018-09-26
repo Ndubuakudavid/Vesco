@@ -51,3 +51,15 @@ $(function () {
         time: 3000
     });
 });
+/*=============================================
+                  CLIENTS
+==============================================*/
+$(function () {
+    $("#clients-list").owlCarousel({
+        items: 6,
+        autoplay: true,
+        smartSpeed: 1000,
+        loop: true,
+        autoplayHoverPause: true
+    });
+});
