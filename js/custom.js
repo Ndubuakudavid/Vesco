@@ -63,3 +63,33 @@ $(function () {
         autoplayHoverPause: true
     });
 });
+/*=============================================
+                  NAVIGATION
+==============================================*/
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() < 50) {
+            // hide nav 
+            $("nav").removeClass("vesco-top-nav");
+            $("#back-to-top").fadeOut()
+        } else {
+            // show nav
+            $("nav").addClass("vesco-top-nav");
+            $("#back-to-top").fadeIn()
+        }
+    });
+
+});
+// Smooth scrolling
+$(function () {
+    $("a.smooth-scroll").click(function (event) {
+        event.preventDefault();
+
+        // get/return id like #about, #work, #team and etc
+        let section = $(this).attr("href");
+
+        $("html, body").animate({
+            scrollTop: $(section).offset().top - 64
+        }, 1250, "easeInOutExpo");
+    })
+});
